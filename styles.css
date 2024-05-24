@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* SACA EL CUADRO AZUL CUANDO SE CLIQUEA EL INPUT: */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body {
@@ -11,54 +13,60 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     width: 100vw;
     height: 100vh;
-    counter-reset:game;
+    counter-reset: game;
 }
 
-  .title, .counter {
+.title,
+.counter {
     font-size: 1.5rem;
     color: rgb(236, 54, 93);
     text-align: center;
     text-shadow: 1px 1px 1px yellow;
-  }
-  .counter{
-    margin-top: 20px;
-  }
+}
 
-div.title{
+.counter {
+    margin-top: 20px;
+}
+
+div.title {
     position: relative;
     z-index: 100;
     top: 0;
-    height: 100vh;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.801);
     display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-  img.title{
+
+img.title {
     max-width: 100%;
     margin-bottom: 30px;
     height: 250px;
-  }
-  p.title{
+}
+
+p.title {
     background-color: rgb(0, 0, 0);
     width: 90%;
     border-radius: 10px;
     padding: 5px;
     border: 1px solid rgba(35, 252, 216, 0.466);
     box-shadow: 1px 1px 10px -2px rgba(35, 252, 216, 0.466);
-  }
-span.title{
+}
+
+span.title {
     display: block;
     margin-bottom: 5px;
 }
-span.title::before{
+
+span.title::before {
     content: '·';
 }
 
-  .game:hover .title{
+.game:hover .title {
     display: none;
-  }
+}
 
 .game {
     background-color: rgb(152, 217, 255);
@@ -75,7 +83,7 @@ div {
     box-sizing: content-box;
 }
 
-input{
+input {
     position: absolute;
     z-index: 2;
     top: -4px;
@@ -84,13 +92,15 @@ input{
     cursor: pointer;
     appearance: none;
 }
+
 input.dudu:checked {
     counter-increment: game;
-  }
+}
 
-  .counter::after{
+.counter::after {
     content: counter(game);
-  }
+}
+
 /*  bears ----------------------------------------------*/
 
 .bear-dudu {
@@ -136,15 +146,18 @@ div.eye {
     animation-duration: 2s;
     animation-iteration-count: infinite;
 }
+
 @keyframes pestaneo {
-    0%{
+    0% {
         height: 10px;
     }
-    5%{
+
+    5% {
         transform: translateY(5px);
         height: 3px;
     }
-    10%{
+
+    10% {
         transform: translateY(0px);
         height: 10px;
     }
@@ -295,7 +308,7 @@ div.bun.right {
 }
 
 /* grass ----------------------------------------------- */
-.floor{
+.floor {
     z-index: 10;
     position: absolute;
     bottom: 0;
@@ -303,7 +316,8 @@ div.bun.right {
     height: 35px;
     background: linear-gradient(rgb(4, 43, 4) 3%, rgb(2, 26, 2)80%);
 }
-.grass{
+
+.grass {
     position: absolute;
     bottom: 32px;
     z-index: 9;
@@ -311,41 +325,45 @@ div.bun.right {
     border-bottom: 2px solid rgb(4, 43, 4);
 }
 
-.grass.uno{
+.grass.uno {
     left: 10px;
     height: 100px;
     width: 80px;
-    background-color: green ;
+    background-color: green;
     clip-path: polygon(10% 100%, 55% 99%, 62% 71%, 99% 26%, 63% 53%, 38% 86%, 85% 10%, 32% 73%, 73% 1%, 32% 65%, 42% 0%, 19% 70%, 12% 13%, 23% 30%, 14% 0%, 2% 18%);
 }
-.grass.uno{
+
+.grass.uno {
     left: 10px;
     height: 100px;
     width: 80px;
-    background-color: green ;
+    background-color: green;
     clip-path: polygon(10% 100%, 55% 99%, 62% 71%, 99% 26%, 63% 53%, 38% 86%, 85% 10%, 32% 73%, 73% 1%, 32% 65%, 42% 0%, 19% 70%, 12% 13%, 23% 30%, 14% 0%, 2% 18%);
 }
-.grass.dos{
+
+.grass.dos {
     right: -15px;
     height: 160px;
     width: 100px;
-    background-color: green ;
+    background-color: green;
     clip-path: polygon(10% 100%, 55% 99%, 62% 71%, 99% 26%, 63% 53%, 38% 86%, 85% 10%, 32% 73%, 73% 1%, 32% 65%, 42% 0%, 19% 70%, 12% 13%, 23% 30%, 14% 0%, 2% 18%);
     transform: rotateY(180deg);
 }
-.grass.tres{
+
+.grass.tres {
     right: 25px;
     height: 150px;
     width: 140px;
-    background-color: green ;
+    background-color: green;
     clip-path: polygon(6% 100%, 76% 100%, 84% 100%, 99% 26%, 64% 88%, 95% 4%, 54% 83%, 69% 26%, 50% 68%, 43% 2%, 34% 69%, 29% 38%, 19% 0, 20% 79%, 0 1%, 7% 80%);
     transform: rotateY(180deg);
 }
-.grass.cuatro{
+
+.grass.cuatro {
     left: 125px;
     height: 120px;
     width: 100px;
-    background-color: green ;
+    background-color: green;
     clip-path: polygon(6% 100%, 76% 100%, 84% 100%, 99% 26%, 64% 88%, 95% 4%, 54% 83%, 69% 26%, 50% 68%, 43% 2%, 34% 69%, 29% 38%, 19% 0, 20% 79%, 0 1%, 7% 80%);
     transform: rotateY(180deg);
 }
@@ -360,16 +378,19 @@ div.bun.right {
     animation-name: dudu-layer-uno;
     animation-duration: 2s;
     animation-iteration-count: infinite;
-    animation-timing-function: cubic-bezier(.53,.1,.47,1.24);
+    animation-timing-function: cubic-bezier(.53, .1, .47, 1.24);
 }
+
 @keyframes dudu-layer-uno {
-    0%{
+    0% {
         transform: scale(0.8) translateY(100%);
     }
-    50%{
+
+    50% {
         transform: scale(0.8) translateY(0);
     }
-    100%{
+
+    100% {
         transform: scale(0.8) translateY(100%);
     }
 }
@@ -385,17 +406,21 @@ div.bun.right {
     animation-iteration-count: infinite;
     animation-timing-function: ease-out;
 }
+
 @keyframes dudu-layer-dos {
-    0%{
+    0% {
         transform: scale(0.7) translateY(100%);
     }
-    35%{
+
+    35% {
         transform: scale(0.7) translateY(0);
     }
-    50%{
+
+    50% {
         transform: scale(0.7) translateY(100%);
     }
-    100%{
+
+    100% {
         transform: scale(0.7) translateY(100%);
     }
 }
@@ -418,18 +443,22 @@ div.bun.right {
     animation-iteration-count: infinite;
     animation-timing-function: ease;
 }
+
 @keyframes dudu-layer-cuatro {
-    0%{
+    0% {
         transform: scale(0.6) translateY(100%);
     }
-    25%{
+
+    25% {
         transform: scale(0.6) translateY(0);
     }
-    30%{
+
+    30% {
         transform: scale(0.6) translateY(100%);
     }
-    100%{
-        transform: scale(0.7) translateY(100%);
+
+    100% {
+        transform: scale(0.6) translateY(100%);
     }
 }
 
@@ -443,14 +472,17 @@ div.bun.right {
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
+
 @keyframes dudu-layer-cinco {
-    0%{
+    0% {
         transform: scale(0.75) translateY(100%);
     }
-    30%{
+
+    30% {
         transform: scale(0.75) translateY(0);
     }
-    100%{
+
+    100% {
         transform: scale(0.75) translateY(100%);
     }
 }
@@ -471,19 +503,23 @@ div.bun.right {
     animation-name: dudu-layer-siete;
     animation-duration: 3.5s;
     animation-iteration-count: infinite;
-    animation-timing-function: cubic-bezier(0,.92,.5,.15);
+    animation-timing-function: cubic-bezier(0, .92, .5, .15);
 }
+
 @keyframes dudu-layer-siete {
-    0%{
+    0% {
         transform: scale(0.8) translateY(100%);
     }
-    70%{
+
+    70% {
         transform: scale(0.8) translateY(0);
     }
-    100%{
+
+    100% {
         transform: scale(0.8) translateY(100%);
     }
 }
+
 .layer-siete-bis.bear-dudu {
     z-index: 7;
     bottom: 15px;
@@ -494,17 +530,21 @@ div.bun.right {
     animation-iteration-count: infinite;
     animation-timing-function: ease;
 }
+
 @keyframes dudu-layer-siete-bis {
-    0%{
+    0% {
         transform: scale(0.5)
     }
-    30%{
-        transform: scale(0.6) rotate(-45deg) translate(-40px, -20px);
+
+    30% {
+        transform: scale(0.5) rotate(-45deg) translate(-40px, -20px);
     }
-    60%{
+
+    60% {
         transform: scale(0.5)
     }
-    100%{
+
+    100% {
         transform: scale(0.5)
     }
 }
